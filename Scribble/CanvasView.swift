@@ -8,6 +8,8 @@
 
 import UIKit
 
+let π = CGFloat(M_PI)
+
 @IBDesignable
 class CanvasView: UIImageView {
   
@@ -15,7 +17,7 @@ class CanvasView: UIImageView {
   
   @IBInspectable var drawColor: UIColor = UIColor.redColor()
   @IBInspectable var lineWidth: CGFloat = 6
-
+  
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
     self.layer.borderColor = UIColor.blueColor().CGColor
@@ -31,20 +33,7 @@ class CanvasView: UIImageView {
     // Draw previous image into context
     self.image?.drawInRect(bounds)
     
-    let previousLocation = touch.previousLocationInView(self)
-    let location = touch.locationInView(self)
-    
-    // Set up the stroke
-    CGContextSetLineCap(context, .Round)
-    CGContextSetLineWidth(context, lineWidth)
-    drawColor.setStroke()
-
-    // Set up the points
-    CGContextMoveToPoint(context, previousLocation.x, previousLocation.y)
-    CGContextAddLineToPoint(context, location.x, location.y)
-    
-    // Draw the stroke
-    CGContextStrokePath(context)
+    drawStroke(context, touch: touch)
     
     // Update image
     self.image = UIGraphicsGetImageFromCurrentImageContext()
@@ -52,7 +41,22 @@ class CanvasView: UIImageView {
     
   }
   
-  func drawStroke(fromPoint: CGPoint, toPoint: CGPoint) {
+  func drawStroke(context: CGContext?, touch: UITouch) {
+    let previousLocation = touch.previousLocationInView(self)
+    let location = touch.locationInView(self)
     
+    // Set up the default stroke
+    CGContextSetLineCap(context, .Round)
+    CGContextSetLineWidth(context, lineWidth)
+    
+    drawColor.setStroke()
+    
+    // Set up the points
+    CGContextMoveToPoint(context, previousLocation.x, previousLocation.y)
+    CGContextAddLineToPoint(context, location.x, location.y)
+    
+    // Draw the stroke
+    CGContextStrokePath(context)
+
   }
 }
