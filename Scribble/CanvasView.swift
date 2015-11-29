@@ -14,7 +14,13 @@ class CanvasView: UIImageView {
   var drawingImage: UIImage?
   
   @IBInspectable var drawColor: UIColor = UIColor.redColor()
-  @IBInspectable var lineWidth: CGFloat = 10
+  @IBInspectable var lineWidth: CGFloat = 6
+
+  required init?(coder aDecoder: NSCoder) {
+    super.init(coder: aDecoder)
+    self.layer.borderColor = UIColor.blueColor().CGColor
+    self.layer.borderWidth = 1
+  }
   
   override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
     guard let touch = touches.first else { return }
