@@ -28,12 +28,14 @@ class ViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    canvasView.clearCanvas()
+    canvasView.clearCanvas(animated:false)
   }
   
-  @IBAction func btnClear(sender: AnyObject) {
-    canvasView.clearCanvas()
+  // shake to clear screen
+  override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
+    canvasView.clearCanvas(animated: true)
   }
-
 }
+
+
 

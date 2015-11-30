@@ -73,7 +73,16 @@ class CanvasView: UIImageView {
     return lineWidth
   }
   
-  func clearCanvas() {
-    image = UIImage(named: "Background")
+  func clearCanvas(animated animated: Bool) {
+    if animated {
+      UIView.animateWithDuration(0.5, animations: {
+        self.alpha = 0
+        }, completion: { finished in
+          self.alpha = 1
+          self.image = nil
+      })
+    } else {
+      self.image = nil
+    }
   }
 }
