@@ -19,7 +19,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="zBF-1D-PJp" customClass="CanvasView" customModule="Scribble" customModuleProvider="target">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="zBF-1D-PJp" customClass="CanvasView" customModule="Scribble" customModuleProvider="target">
                                 <rect key="frame" x="25" y="25" width="550" height="550"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -28,16 +28,16 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XNX-vV-1Yz">
-                                <rect key="frame" x="25" y="60" width="80" height="50"/>
+                                <rect key="frame" x="28" y="70" width="80" height="50"/>
                                 <animations/>
-                                <color key="backgroundColor" red="0.01176470588" green="0.66274509800000003" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="GnD-TS-vq6"/>
                                     <constraint firstAttribute="width" constant="80" id="vAl-go-hMf"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Clear">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="btnClear:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xFE-PE-gpd"/>
@@ -45,14 +45,14 @@
                             </button>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" red="1" green="0.98039215690000003" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="zBF-1D-PJp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4TX-hX-7nF"/>
                             <constraint firstItem="zBF-1D-PJp" firstAttribute="height" relation="lessThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="height" id="65d-dB-MsO"/>
-                            <constraint firstItem="XNX-vV-1Yz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="5" id="GK9-cE-P3m"/>
+                            <constraint firstItem="XNX-vV-1Yz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="GK9-cE-P3m"/>
                             <constraint firstItem="zBF-1D-PJp" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" priority="750" constant="-50" id="Vx1-G9-egR"/>
                             <constraint firstItem="zBF-1D-PJp" firstAttribute="width" relation="lessThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="width" id="c8k-eu-QWa"/>
-                            <constraint firstItem="XNX-vV-1Yz" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="h2V-MA-BRe"/>
+                            <constraint firstItem="XNX-vV-1Yz" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="h2V-MA-BRe"/>
                             <constraint firstItem="zBF-1D-PJp" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" priority="750" constant="-50" id="hh6-F3-mKK"/>
                             <constraint firstItem="zBF-1D-PJp" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="nbj-vS-l0Q"/>
                         </constraints>
@@ -63,6 +63,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="305" y="330"/>
         </scene>
     </scenes>
     <resources>

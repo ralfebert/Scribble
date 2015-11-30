@@ -57,9 +57,9 @@
 			isa = PBXGroup;
 			children = (
 				82B175501C0A7A2000A199A6 /* AppDelegate.swift */,
+				82B175541C0A7A2000A199A6 /* Main.storyboard */,
 				82B175521C0A7A2000A199A6 /* ViewController.swift */,
 				82B175621C0A7A7D00A199A6 /* CanvasView.swift */,
-				82B175541C0A7A2000A199A6 /* Main.storyboard */,
 				82B175571C0A7A2000A199A6 /* Assets.xcassets */,
 				82B175591C0A7A2000A199A6 /* LaunchScreen.storyboard */,
 				82B1755C1C0A7A2100A199A6 /* Info.plist */,
@@ -255,7 +255,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Scribble/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.carolinebegbie.Scribble;
+				PRODUCT_BUNDLE_IDENTIFIER = com.razeware.Scribble;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -266,7 +266,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Scribble/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.carolinebegbie.Scribble;
+				PRODUCT_BUNDLE_IDENTIFIER = com.razeware.Scribble;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -290,6 +290,7 @@
 				82B175611C0A7A2100A199A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
