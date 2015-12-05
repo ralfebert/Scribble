@@ -30,7 +30,6 @@ class CanvasView: UIImageView {
   private let DefaultLineWidth:CGFloat = 6
   
   private var drawColor: UIColor = UIColor.redColor()
-  private var lineWidth: CGFloat = 6
   
   override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
     guard let touch = touches.first else { return }
@@ -53,7 +52,7 @@ class CanvasView: UIImageView {
     let location = touch.locationInView(self)
     
     // Calculate line width for drawing stroke
-    lineWidth = lineWidthForDrawing(context, touch: touch)
+    let lineWidth = lineWidthForDrawing(context, touch: touch)
 
     // Set color
     drawColor.setStroke()
@@ -73,6 +72,7 @@ class CanvasView: UIImageView {
   
   private func lineWidthForDrawing(context: CGContext?, touch: UITouch) -> CGFloat {
 
+    var lineWidth:CGFloat
     lineWidth = DefaultLineWidth
     
     return lineWidth
