@@ -26,8 +26,10 @@ let π = CGFloat(M_PI)
 
 class CanvasView: UIImageView {
   
-  private var drawColor: UIColor = UIColor.redColor()
+  // Parameters
+  private let DefaultLineWidth:CGFloat = 6
   
+  private var drawColor: UIColor = UIColor.redColor()
   private var lineWidth: CGFloat = 6
   
   override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -50,12 +52,16 @@ class CanvasView: UIImageView {
     let previousLocation = touch.previousLocationInView(self)
     let location = touch.locationInView(self)
     
-    // set up line for drawing
+    // Calculate line width for drawing stroke
     lineWidth = lineWidthForDrawing(context, touch: touch)
-    CGContextSetLineWidth(context, lineWidth)
-    
-    // set color
+
+    // Set color
     drawColor.setStroke()
+
+    // Configure line
+    CGContextSetLineWidth(context, lineWidth)
+    CGContextSetLineCap(context, .Round)
+
     
     // Set up the points
     CGContextMoveToPoint(context, previousLocation.x, previousLocation.y)
@@ -66,9 +72,8 @@ class CanvasView: UIImageView {
   }
   
   private func lineWidthForDrawing(context: CGContext?, touch: UITouch) -> CGFloat {
-    
-    // Set up line for Drawing
-    CGContextSetLineCap(context, .Round)
+
+    lineWidth = DefaultLineWidth
     
     return lineWidth
   }
