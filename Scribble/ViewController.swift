@@ -32,7 +32,7 @@ class ViewController: UIViewController {
   }
   
   // Shake to clear screen
-  override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
+    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
     canvasView.clearCanvas(animated: true)
   }
 }
