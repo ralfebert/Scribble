@@ -88,8 +88,8 @@ class CanvasView: UIImageView {
     }
 
     private func drawStroke(context: CGContext!, touch: UITouch) {
-        let previousLocation = touch.previousLocation(in: self)
-        let location = touch.location(in: self)
+        let previousLocation = touch.precisePreviousLocation(in: self)
+        let location = touch.preciseLocation(in: self)
 
         var lineWidth: CGFloat
         if touch.type == .stylus {
@@ -121,8 +121,8 @@ class CanvasView: UIImageView {
 
     private func lineWidthForShading(context: CGContext!, touch: UITouch) -> CGFloat {
         // 1
-        let previousLocation = touch.previousLocation(in: self)
-        let location = touch.location(in: self)
+        let previousLocation = touch.precisePreviousLocation(in: self)
+        let location = touch.preciseLocation(in: self)
 
         // 2 - vector1 is the pencil direction
         let vector1 = touch.azimuthUnitVector(in: self)
